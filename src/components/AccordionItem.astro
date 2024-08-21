@@ -18,7 +18,7 @@ const contentId = `${id}-content`;
       alt=""
     />
   </summary>
-  <div role="region" aria-live="polite" id={contentId}>
+  <div role="region" id={contentId} class="accordion-content">
     <p>{content}</p>
   </div>
 </details>
@@ -28,7 +28,6 @@ const contentId = `${id}-content`;
 
   details {
     padding-block: $accordion-item-padding-block;
-
     @include mq(medium) {
       padding-block: $accordion-item-padding-block-desktop;
     }
@@ -40,6 +39,10 @@ const contentId = `${id}-content`;
     &:not(:last-of-type) {
       border-bottom: $accordion-item-border-bottom;
       padding-inline-end: 0;
+    }
+
+    &[open] summary ~ * {
+      animation: sweep 0.5s ease-in-out;
     }
   }
 
@@ -62,5 +65,16 @@ const contentId = `${id}-content`;
   }
   summary::-webkit-details-marker {
     display: none;
+  }
+
+  @keyframes sweep {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 </style>
