@@ -3,9 +3,14 @@
 ---
 
 <footer class="site-footer">
-  <div class="container">
-    <p>Footer content here!</p>
-  </div>
+  <p>
+    Challenge by <a
+      href="https://www.frontendmentor.io?ref=challenge"
+      target="_blank">Frontend Mentor</a
+    >. Coded by <a href="https://www.frontendmentor.io/profile/kaamiik"
+      >Kamran Kiani</a
+    >.
+  </p>
 </footer>
 
 <style lang="scss">
@@ -14,6 +19,8 @@
   .site-footer {
     background-color: $footer-background-color;
     color: $footer-text-color;
+    font-size: $footer-font-size;
+    text-align: $footer-text-align;
 
     a {
       color: $footer-link-color;
@@ -22,6 +29,7 @@
 
       &:is(:hover, :focus) {
         color: $footer-link-color-hover;
+        text-decoration: $footer-link-text-decoration-hover;
       }
     }
   }

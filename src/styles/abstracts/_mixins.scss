@@ -23,13 +23,14 @@
   }
 }
 
-@mixin heading($fs, $color: $heading-color-default) {
+@mixin heading($fs, $fw, $color: $heading-color-default) {
   font-size: $fs;
   color: $color;
+  font-weight: $fw;
 
   font-family: $heading-font-family;
   text-transform: $heading-text-transform;
   letter-spacing: $heading-letter-spacing;
-  font-weight: $heading-font-weight;
+
   line-height: $heading-line-height;
 }

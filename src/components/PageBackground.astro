@@ -1,0 +1,33 @@
+---
+
+---
+
+<picture>
+  <source
+    srcset="/public/assets/images/background-pattern-desktop.svg"
+    media="(min-width: 40rem)"
+  />
+  <img src="/public/assets/images/background-pattern-mobile.svg" alt="" />
+</picture>
+
+<style lang="scss">
+  @use "../styles/abstracts/" as *;
+  picture {
+    grid-row: 1;
+    grid-column: 1 / -1;
+    height: 232px;
+
+    @include mq(medium) {
+      height: 320px;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 232px;
+    object-fit: cover;
+    @include mq(medium) {
+      height: 320px;
+    }
+  }
+</style>

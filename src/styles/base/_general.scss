@@ -7,6 +7,15 @@ body {
   color: $body-text-color;
   background-color: $body-background-color;
   line-height: $body-line-height;
+
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  display: grid;
+  grid-template-rows: auto 1fr;
 }
 
 a {

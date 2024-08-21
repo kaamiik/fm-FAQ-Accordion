@@ -1,0 +1,58 @@
+---
+import AccordionItem from "./AccordionItem.astro";
+
+const { items } = Astro.props;
+---
+
+<section role="group" aria-labelledby="AccId">
+  {
+    items.map((item, index) => (
+      <AccordionItem
+        key={index}
+        id={`Acc${index + 1}`}
+        title={item.title}
+        content={item.content}
+        isOpen={index === 0}
+      />
+    ))
+  }
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const detailsElements = document.querySelectorAll("details");
+
+    detailsElements.forEach((details) => {
+      const summary = details.querySelector("summary");
+      const img = summary.querySelector("img");
+
+      summary.addEventListener("click", function (event) {
+        event.preventDefault();
+        const isCurrentlyOpen = details.hasAttribute("open");
+
+        if (!isCurrentlyOpen) {
+          detailsElements.forEach((otherDetails) => {
+            if (otherDetails !== details) {
+              otherDetails.removeAttribute("open");
+              const otherSummary = otherDetails.querySelector("summary");
+              const otherImg = otherDetails.querySelector("summary img");
+
+              otherSummary.setAttribute("aria-expanded", "false");
+
+              if (otherImg) {
+                otherImg.src = "/public/assets/images/icon-plus.svg";
+              }
+            }
+          });
+
+          details.setAttribute("open", "");
+          summary.setAttribute("aria-expanded", "true");
+
+          if (img) {
+            img.src = "/public/assets/images/icon-minus.svg";
+          }
+        }
+      });
+    });
+  });
+</script>

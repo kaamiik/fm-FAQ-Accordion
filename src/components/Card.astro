@@ -1,9 +1,8 @@
 ---
-const { El = "div", TitleLevel = "h2", title } = Astro.props;
+const { El = "div" } = Astro.props;
 ---
 
 <El class="card">
-  <TitleLevel class="card__heading">{title}</TitleLevel>
   <slot />
 </El>
 
@@ -17,12 +16,12 @@ const { El = "div", TitleLevel = "h2", title } = Astro.props;
     background-color: $card-background-default;
     font-family: $card-font-family;
     color: $card-color-default;
-    line-height: $card-line-height;
     box-shadow: $card-shadow;
     border-radius: $card-border-radius;
 
-    &__heading {
-      @include heading($card-heading-font-size, $card-heading-color-default);
+    @include mq(medium) {
+      padding: $card-padding-desktop;
+      gap: $card-flow-spacing-desktop;
     }
   }
 </style>

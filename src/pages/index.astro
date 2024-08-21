@@ -1,29 +1,56 @@
 ---
-import SiteFooter from "../components/SiteFooter.astro";
-import SiteHeader from "../components/SiteHeader.astro";
 import Layout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro";
+import PageHeader from "../components/PageHeader.astro";
+import Accordion from "../components/Accordion.astro";
+import PageBackground from "../components/PageBackground.astro";
+const items = [
+  {
+    title: "What is Frontend Mentor, and how will it help me?",
+    content: `Frontend Mentor offers realistic coding challenges to help
+              developers improve their frontend coding skills with projects in
+              HTML, CSS, and JavaScript. It's suitable for all levels and ideal
+              for portfolio building.`,
+  },
+  {
+    title: "Is Frontend Mentor free?",
+    content: `Yes, Frontend Mentor offers both free and premium coding
+              challenges, with the free option providing access to a range of
+              projects suitable for all skill levels.`,
+  },
+  {
+    title: "Can I use Frontend Mentor projects in my portfolio?",
+    content: `Yes, you can use projects completed on Frontend Mentor in your
+              portfolio. It's an excellent way to showcase your skills to
+              potential employers!`,
+  },
+  {
+    title: "How can I get help if I'm stuck on a Frontend Mentor challenge?",
+    content: `The best place to get help is inside Frontend Mentor's Discord
+              community. There's a help channel where you can ask questions and
+              seek support from other community members.`,
+  },
+];
 ---
 
-<Layout title="Let's get to work">
-  <div class="container flow">
-    <h1 class="heading-1">Let's go</h1>
-    <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum nulla
-      repellendus dolore quam quas? Nisi eaque veniam dolorem enim. Odit
-      incidunt nisi dignissimos facilis perspiciatis quidem accusantium at
-      consectetur minus.
-    </p>
-    <p>
-      Aperiam non nulla recusandae totam atque officia debitis tenetur, natus
-      veritatis eius perferendis libero earum voluptatum doloremque dignissimos,
-      ut laborum illum eligendi autem ipsa quaerat. Dolorum consequatur ipsum
-      harum ut.
-    </p>
-    <p>
-      Dolore molestias et esse neque beatae atque. Quas necessitatibus,
-      quibusdam est vero neque corporis doloremque consectetur error, dicta
-      animi commodi! Accusamus distinctio dolor eligendi sint repudiandae
-      sapiente adipisci nemo doloribus?
-    </p>
+<Layout title="Frontend Mentor | FAQ accordion">
+  <PageBackground />
+  <div class="grid-child container">
+    <Card>
+      <PageHeader
+        imageSource="/assets/images/icon-star.svg"
+        headingTitle="FAQs"
+        headingId="AccId"
+      />
+      <Accordion items={items} />
+    </Card>
   </div>
 </Layout>
+
+<style>
+  .grid-child {
+    grid-row: 1 / -1;
+    grid-column: 1 / -1;
+    place-self: center;
+  }
+</style>

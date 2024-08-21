@@ -1,0 +1,28 @@
+---
+const { imageSource, headingTitle, headingId } = Astro.props;
+---
+
+<div class="heading-wrapper">
+  <img src={imageSource} alt="" />
+  <h1 id={headingId} class="heading-1">{headingTitle}</h1>
+</div>
+
+<style lang="scss">
+  @use "../styles/abstracts/" as *;
+
+  .heading-wrapper {
+    display: flex;
+    align-items: center;
+    gap: $size-6;
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+
+    @include mq(medium) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+</style>
