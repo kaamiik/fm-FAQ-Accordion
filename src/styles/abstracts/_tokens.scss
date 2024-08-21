@@ -58,7 +58,7 @@ $heading-2-color: $heading-color-default;
 
 // layout
 $grid-gap: $size-6;
-$flex-group-gap: $size-4;
+$flex-group-gap: $size-6;
 
 $hero-padding-block: clamp(15rem, 15vh, 20rem);
 $section-padding-block: clamp(5rem, 10vh, 6rem);
@@ -137,6 +137,11 @@ $card-color-default: $body-text-color;
 $card-font-family: $body-font-family;
 $card-heading-color-default: $card-color-default;
 
+$accordion-item-padding-block: $size-5;
+$accordion-item-padding-block-desktop: $size-6;
+$accordion-item-border-bottom: 1px solid $color-neutral-200;
+$accordion-item-content-padding-block-start: $size-6;
+$accordion-item-summary-color-hover: $color-primary-400;
 // forms
 // $form-label-color: $body-text-color;
 // $form-label-font-family: $body-font-family;
