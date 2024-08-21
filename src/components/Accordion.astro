@@ -4,7 +4,7 @@ import AccordionItem from "./AccordionItem.astro";
 const { items } = Astro.props;
 ---
 
-<section role="group" aria-labelledby="AccId">
+<div role="group" aria-labelledby="AccId">
   {
     items.map((item, index) => (
       <AccordionItem
@@ -16,7 +16,7 @@ const { items } = Astro.props;
       />
     ))
   }
-</section>
+</div>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
