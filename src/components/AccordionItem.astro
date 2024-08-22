@@ -11,14 +11,12 @@ const contentId = `${id}-content`;
     class="flex-group"
   >
     <h2 class="heading-2">{title}</h2>
-    <span>
-      <img
-        src={isOpen
-          ? "/assets/images/icon-minus.svg"
-          : "/assets/images/icon-plus.svg"}
-        alt=""
-      />
-    </span>
+    <img
+      src={isOpen
+        ? "/assets/images/icon-minus.svg"
+        : "/assets/images/icon-plus.svg"}
+      alt=""
+    />
   </summary>
   <div role="region" id={contentId} class="accordion-content">
     <p>{content}</p>
