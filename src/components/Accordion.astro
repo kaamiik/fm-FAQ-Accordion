@@ -37,8 +37,6 @@ const { items } = Astro.props;
               const otherSummary = otherDetails.querySelector("summary");
               const otherImg = otherDetails.querySelector("summary img");
 
-              otherSummary.setAttribute("aria-expanded", "false");
-
               if (otherImg) {
                 otherImg.src = "/assets/images/icon-plus.svg";
               }
@@ -46,7 +44,6 @@ const { items } = Astro.props;
           });
 
           details.setAttribute("open", "");
-          summary.setAttribute("aria-expanded", "true");
 
           if (img) {
             img.src = "/assets/images/icon-minus.svg";

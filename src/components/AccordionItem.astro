@@ -1,15 +1,9 @@
 ---
 const { id, title, content, isOpen } = Astro.props;
-const contentId = `${id}-content`;
 ---
 
 <details {...isOpen ? { open: true } : {}}>
-  <summary
-    id={id}
-    aria-expanded={isOpen ? "true" : "false"}
-    aria-controls={contentId}
-    class="flex-group"
-  >
+  <summary id={id} class="flex-group">
     <h2 class="heading-2">{title}</h2>
     <img
       src={isOpen
@@ -18,7 +12,7 @@ const contentId = `${id}-content`;
       alt=""
     />
   </summary>
-  <div role="region" id={contentId} class="accordion-content">
+  <div role="region" class="accordion-content">
     <p>{content}</p>
   </div>
 </details>
